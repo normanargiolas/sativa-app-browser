@@ -5,7 +5,11 @@
   Welcome {{name}} to our awesome App. You can manage your todos <a routerLink="/todos">here</a>
 </div>
 
-
 <div class="container">
-  <button (click)=getWelcomeMessage() class="btn btn-success">Get Welcome Message</button>
+  <button (click)=getWelcomeMessageWithParameter() class="btn btn-success">Get Welcome Message</button>
+</div>
+
+<div class="container" *ngIf="welcomeMessageFromService">
+  <h2>Your Customize Welcome Message</h2>
+  {{welcomeMessageFromService}}
 </div>
