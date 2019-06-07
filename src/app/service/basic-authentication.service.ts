@@ -18,7 +18,7 @@ export class BasicAuthenticationService {
 
   executeJWTAuthenticationService(username, password) {
     return this.http.post<any>(
-      `${API_URL}/authenticate`,
+      `${API_URL}/api/auth/login`,
       {username, password}).pipe(
       map(data => {
         sessionStorage.setItem(AUTHENTICATERUSER, username);
