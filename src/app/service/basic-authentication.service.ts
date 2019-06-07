@@ -22,7 +22,7 @@ export class BasicAuthenticationService {
       {username, password}).pipe(
       map(data => {
         sessionStorage.setItem(AUTHENTICATERUSER, username);
-        sessionStorage.setItem(TOKEN, `Bearer ${data.token}`);
+        sessionStorage.setItem(TOKEN, `Bearer ${data.accessToken}`);
         return data;
       })
     );
