@@ -24,16 +24,16 @@ export class WelcomeComponent implements OnInit {
     this.name = this.route.snapshot.params['name'];
   }
 
-  getWelcomeMessage() {
-    console.log(this.service.executeHelloWorldBeanService());
-    this.service.executeHelloWorldBeanService().subscribe(
-      response => this.handleSuccessfulResponse(response),
-      error => this.handleErrorResponse(error)
-    );
-  }
+  // getWelcomeMessage() {
+  //   console.log(this.service.executeHelloWorldBeanService());
+  //   this.service.executeHelloWorldBeanService().subscribe(
+  //     response => this.handleSuccessfulResponse(response),
+  //     error => this.handleErrorResponse(error)
+  //   );
+  // }
 
-  getWelcomeMessageWithParameter() {
-    this.service.executeHelloWorldBeanServiceWithPathVariable(this.name).subscribe(
+  getWelcomeMessage() {
+    this.service.executeWelcomeMessage(this.name).subscribe(
       response => this.handleSuccessfulResponse(response),
       error => this.handleErrorResponse(error)
     );

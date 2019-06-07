@@ -36,7 +36,7 @@ export class ListTodosComponent implements OnInit {
   }
 
   refreshTodos() {
-    this.service.retriveAllTodos("norman").subscribe(
+    this.service.retriveAllTodos("Norman").subscribe(
       responce => {
         this.todos = responce;
       }

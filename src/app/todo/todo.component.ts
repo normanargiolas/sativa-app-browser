@@ -23,7 +23,7 @@ export class TodoComponent implements OnInit {
     this.todo = new Todo(this.id, '', false, new Date());
 
     if (this.id != -1) {
-      this.todoService.retriveTodo('norman', this.id).subscribe(
+      this.todoService.retriveTodo('Norman', this.id).subscribe(
         data => this.todo = data
       );
     }
@@ -31,14 +31,14 @@ export class TodoComponent implements OnInit {
 
   saveTodo() {
     if (this.id == -1) {
-      this.todoService.createTodo('norman', this.todo).subscribe(
+      this.todoService.createTodo('Norman', this.todo).subscribe(
         data => {
           console.log(data);
           this.router.navigate(['todos']);
         }
       );
     } else {
-      this.todoService.updateTodo('norman', this.id, this.todo).subscribe(
+      this.todoService.updateTodo('Norman', this.id, this.todo).subscribe(
         data => {
           console.log(data);
           this.router.navigate(['todos']);

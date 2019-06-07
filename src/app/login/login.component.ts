@@ -25,30 +25,30 @@ export class LoginComponent implements OnInit {
 
   }
 
-  handleLogin() {
-    if (this.hardcodedAuthenticationService.authenticate(this.username, this.password)) {
-      //Redirect to Welcome page
-      this.router.navigate(['welcome', this.username]);
-      this.invalidLogin = false;
-    } else {
-      this.invalidLogin = true;
-    }
-  }
+  // handleLogin() {
+  //   if (this.hardcodedAuthenticationService.authenticate(this.username, this.password)) {
+  //     //Redirect to Welcome page
+  //     this.router.navigate(['welcome', this.username]);
+  //     this.invalidLogin = false;
+  //   } else {
+  //     this.invalidLogin = true;
+  //   }
+  // }
+  //
+  // handleBasicAuthentication() {
+  //   this.basicAuthenticationService.executeBasicAuthenticationService(this.username, this.password)
+  //     .subscribe(data => {
+  //       console.log(data);
+  //       this.router.navigate(['welcome', this.username]);
+  //       this.invalidLogin = false;
+  //     }, error => {
+  //       console.log(error);
+  //       this.invalidLogin = true;
+  //     });
+  // }
 
-  handleBasicAuthentication() {
-    this.basicAuthenticationService.executeBasicAuthenticationService(this.username, this.password)
-      .subscribe(data => {
-        console.log(data);
-        this.router.navigate(['welcome', this.username]);
-        this.invalidLogin = false;
-      }, error => {
-        console.log(error);
-        this.invalidLogin = true;
-      });
-  }
-
-  handleJWTAuthentication() {
-    this.basicAuthenticationService.executeJWTAuthenticationService(this.username, this.password)
+  handleAuthentication() {
+    this.basicAuthenticationService.executeAuthenticationService(this.username, this.password)
       .subscribe(data => {
         console.log(data);
         this.router.navigate(['welcome', this.username]);

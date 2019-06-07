@@ -16,7 +16,7 @@ export class BasicAuthenticationService {
   constructor(private http: HttpClient) {
   }
 
-  executeJWTAuthenticationService(username, password) {
+  executeAuthenticationService(username, password) {
     return this.http.post<any>(
       `${API_URL}/api/auth/login`,
       {username, password}).pipe(
