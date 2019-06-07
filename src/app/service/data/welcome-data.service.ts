@@ -13,10 +13,6 @@ export class WelcomeDataService {
   constructor(private http: HttpClient) {
   }
 
-  // executeHelloWorldBeanService() {
-  //   return this.http.get<WelcomeBean>(`${API_URL}/hello-world-bean`);
-  // }
-
   executeWelcomeMessage(name) {
     // let basicAuthenticationString = this.createBasicAuthenticationHttpHeader();
     // let headers = new HttpHeaders(
@@ -26,12 +22,5 @@ export class WelcomeDataService {
       // {headers}
     );
   }
-
-  // createBasicAuthenticationHttpHeader() {
-  //   let username = 'norman';
-  //   let password = 'dummy';
-  //   let basicAuthenticationString = 'Basic ' + window.btoa(username + ':' + password);
-  //   return basicAuthenticationString;
-  // }
 
 }

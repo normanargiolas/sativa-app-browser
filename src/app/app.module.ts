@@ -13,7 +13,7 @@ import {FooterComponent} from './footer/footer.component';
 import {LogoutComponent} from './logout/logout.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {TodoComponent} from './todo/todo.component';
-import {HttpIntercepterBasicAuthService} from "./service/http/http-intercepter-basic-auth.service";
+import {HttpIntercepterJwtAuthService} from "./service/http/http-intercepter-jwt-auth.service";
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ import {HttpIntercepterBasicAuthService} from "./service/http/http-intercepter-b
     HttpClientModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterJwtAuthService, multi: true}
   ],
   bootstrap: [AppComponent]
 })
