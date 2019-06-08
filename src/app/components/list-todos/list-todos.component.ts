@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {TodoDataService} from "../service/data/todo-data.service";
+import {TodoDataService} from "../../services/data/todo-data.service";
 import {Router} from "@angular/router";
 
 export class Todo {

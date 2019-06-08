@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
-import {JwtAuthenticationService} from "../jwt-authentication.service";
+import {JwtAuthenticationService} from "../../services/jwt-authentication.service";
 
 @Injectable({
   providedIn: 'root'
