@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {API_URL} from "../../app.constant";
-import {WelcomeBean} from "../../bean/WelcomeBean";
+import {WelcomeBean} from "../../components/bean/WelcomeBean";
 
 
 
