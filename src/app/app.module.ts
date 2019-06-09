@@ -4,7 +4,7 @@ import {FormsModule} from "@angular/forms";
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {LoginComponent} from './components/login/login.component';
+import {LoginComponent} from './pages/login/login.component';
 import {WelcomeComponent} from './components/welcome/welcome.component';
 import {ErrorComponent} from './components/error/error.component';
 import {ListTodosComponent} from './components/list-todos/list-todos.component';
@@ -14,6 +14,20 @@ import {LogoutComponent} from './components/logout/logout.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {TodoComponent} from './components/todo/todo.component';
 import {HttpIntercepterJwtAuthService} from "./interceptors/http/http-intercepter-jwt-auth.service";
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatPaginatorModule,
+  MatProgressSpinnerModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -31,7 +45,19 @@ import {HttpIntercepterJwtAuthService} from "./interceptors/http/http-intercepte
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatSortModule,
+    MatTableModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatSnackBarModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterJwtAuthService, multi: true}
