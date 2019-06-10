@@ -17,11 +17,19 @@ import {HttpIntercepterJwtAuthService} from "./interceptors/http/http-intercepte
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import {MaterialModule} from "./material.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {FullComponent} from "./layout/full/full.component";
+import {SidebarComponent} from "./layout/sidebar/sidebar.component";
+import {HeaderComponent} from "./layout/header/header.component";
+import {SharedModule} from "./shared/shared.module";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    FullComponent,
+    HeaderComponent,
+    SidebarComponent,
     LoginPage,
     WelcomeComponent,
     ErrorComponent,
@@ -39,7 +47,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     HttpClientModule,
     MaterialModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule,
+    FlexLayoutModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterJwtAuthService, multi: true}
