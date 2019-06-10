@@ -1,10 +1,10 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {LoginComponent} from './pages/login/login.component';
+import {LoginPage} from './pages/login/login.page';
 import {WelcomeComponent} from './components/welcome/welcome.component';
 import {ErrorComponent} from './components/error/error.component';
 import {ListTodosComponent} from './components/list-todos/list-todos.component';
@@ -14,50 +14,32 @@ import {LogoutComponent} from './components/logout/logout.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {TodoComponent} from './components/todo/todo.component';
 import {HttpIntercepterJwtAuthService} from "./interceptors/http/http-intercepter-jwt-auth.service";
-import {
-  MatButtonModule,
-  MatCardModule,
-  MatFormFieldModule,
-  MatIconModule,
-  MatInputModule,
-  MatPaginatorModule,
-  MatProgressSpinnerModule,
-  MatSnackBarModule,
-  MatSortModule,
-  MatTableModule,
-  MatTabsModule,
-  MatToolbarModule,
-} from "@angular/material";
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import {MaterialModule} from "./material.module";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
+    LoginPage,
     WelcomeComponent,
     ErrorComponent,
     ListTodosComponent,
     MenuComponent,
     FooterComponent,
     LogoutComponent,
-    TodoComponent
+    TodoComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    MatInputModule,
-    MatPaginatorModule,
-    MatProgressSpinnerModule,
-    MatSortModule,
-    MatTableModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatSnackBarModule,
+    MaterialModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterJwtAuthService, multi: true}
