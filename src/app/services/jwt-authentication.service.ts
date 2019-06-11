@@ -42,7 +42,7 @@ export class JwtAuthenticationService {
   isUserLogIn() {
     let user = sessionStorage.getItem(AUTHENTICATERUSER);
     // return !(user === null);
-    return false;
+    return true;
   }
 
   logout() {

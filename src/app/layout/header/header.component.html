@@ -3,6 +3,7 @@
 <!-- ============================================================== -->
 
 <a *ngIf="!authenticationService.isUserLogIn()" routerLink="/login" class="m-r-20 hidden-sm-up">Login</a>
+<a *ngIf="authenticationService.isUserLogIn()" routerLink="/todos" class="m-r-20 hidden-sm-up">todos</a>
 
 <!--<a *ngIf="authenticationService.isUserLogIn()" routerLink="/logout" class="m-r-20 hidden-sm-up">Logout</a>-->
 <button *ngIf="authenticationService.isUserLogIn()"
