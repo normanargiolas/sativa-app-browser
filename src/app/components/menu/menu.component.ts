@@ -9,13 +9,13 @@ import {JwtAuthenticationService} from "../../services/jwt-authentication.servic
 
 export class MenuComponent implements OnInit {
 
-  // isUserLoggedIn: boolean = false;
+  isUserLoggedIn: boolean = false;
 
   constructor(private authenticationService: JwtAuthenticationService) {
   }
 
   ngOnInit() {
-    // this.isUserLoggedIn = this.hardcodedAuthenticationService.isUserLogIn();
+    this.isUserLoggedIn = this.authenticationService.isUserLogIn();
   }
 
 }
