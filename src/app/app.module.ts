@@ -19,9 +19,10 @@ import {MaterialModule} from "./material.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FullComponent} from "./layout/full/full.component";
 import {SidebarComponent} from "./layout/sidebar/sidebar.component";
-import {HeaderComponent} from "./layout/header/header.component";
 import {SharedModule} from "./shared/shared.module";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {HeaderComponent} from "./layout/header/header.component";
+import {HomePage} from "./pages/home/home.page";
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     HeaderComponent,
     SidebarComponent,
     LoginPage,
+    HomePage,
     WelcomeComponent,
     ErrorComponent,
     ListTodosComponent,
@@ -38,7 +40,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     FooterComponent,
     LogoutComponent,
     TodoComponent,
-    LoginFormComponent
+    LoginFormComponent,
   ],
   imports: [
     BrowserModule,

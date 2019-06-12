@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 import {LoginPage} from "./pages/login/login.page";
 import {WelcomeComponent} from "./components/welcome/welcome.component";
 import {ErrorComponent} from "./components/error/error.component";
@@ -7,13 +7,21 @@ import {ListTodosComponent} from "./components/list-todos/list-todos.component";
 import {LogoutComponent} from "./components/logout/logout.component";
 import {AuthenticationGuard} from "./guards/authentication/authentication.guard";
 import {TodoComponent} from "./components/todo/todo.component";
-import {FullComponent} from "./layout/full/full.component";
+import {HomePage} from "./pages/home/home.page";
+
 
 const routes: Routes = [
+
   {
     path: '',
-    component: FullComponent
+    component: HomePage
   },
+  {
+    path: '',
+    redirectTo: 'starter',
+    pathMatch: 'full'
+  },
+
   {
     path: 'login',
     component: LoginPage
@@ -46,7 +54,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules, onSameUrlNavigation: 'reload'})
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
