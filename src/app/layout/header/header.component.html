@@ -3,7 +3,8 @@
 <!-- ============================================================== -->
 
 <a *ngIf="!authenticationService.isUserLogIn()" routerLink="/login" class="m-r-20 hidden-sm-up">Login</a>
-<a *ngIf="authenticationService.isUserLogIn()" routerLink="/todos" class="m-r-20 hidden-sm-up">todos</a>
+<!--<a *ngIf="authenticationService.isUserLogIn()" routerLink="/logout" class="m-r-20 hidden-sm-up">Logout</a>-->
+<a *ngIf="authenticationService.isUserLogIn()" routerLink="/todos" class="m-r-20 hidden-sm-up">Todos</a>
 
 <!--<a *ngIf="authenticationService.isUserLogIn()" routerLink="/logout" class="m-r-20 hidden-sm-up">Logout</a>-->
 <button *ngIf="authenticationService.isUserLogIn()"
@@ -23,7 +24,7 @@
     <mat-icon>notifications_off</mat-icon>
     Disable notifications
   </button>
-  <button mat-menu-item>
+  <button *ngIf="authenticationService.isUserLogIn()" routerLink="/logout" mat-menu-item>
     <mat-icon>exit_to_app</mat-icon>
     Sign Out
   </button>

@@ -1,7 +1,6 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {MenuItems} from "../../shared/menu-items/menu-items";
 import {MediaMatcher} from "@angular/cdk/layout";
-import {JwtAuthenticationService} from "../../services/jwt-authentication.service";
 
 @Component({
   selector: 'app-full-layout',
